@@ -15,3 +15,7 @@ Random-Int: {{$randomInt}}
 GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/2
+
+###

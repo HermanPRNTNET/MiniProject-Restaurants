@@ -11,7 +11,7 @@ using Restaurants.Infrastructure.Presistence;
 namespace Restaurants.Infrastructure.Migrations
 {
     [DbContext(typeof(RestaurantsDbContext))]
-    [Migration("20250217045756_Init")]
+    [Migration("20250224061330_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -35,6 +35,9 @@ namespace Restaurants.Infrastructure.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("KiloCalories")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
