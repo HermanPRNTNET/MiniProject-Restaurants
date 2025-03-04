@@ -19,3 +19,35 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 GET {{Restaurants.API_HostAddress}}/api/restaurants/2
 
 ###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+{
+  "Name": "Ayam Geprek",
+  "Description": "Traditional Store",
+  "Category": "Fast Food",
+  "HasDelivery": true,
+  "ContactEmail": null,
+  "ContactPhone": null,
+  "City": "London",
+  "Street": "Boots 193",
+  "PostalCode": "11-100"
+}
+
+###
+
+@id=0
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/1
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/6
+Content-Type: application/json
+
+{
+  "Name":"Warung Sambal New Gen Update 1",
+  "Description":"Some Description",
+  "HasDeliver": true
+}
+
+###

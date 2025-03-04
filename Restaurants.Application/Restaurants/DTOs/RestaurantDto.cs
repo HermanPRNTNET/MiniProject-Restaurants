@@ -23,25 +23,25 @@ public class RestaurantDto
     public List<DishDto> Dishes { get; set; } = [];
 
 
-    public static RestaurantDto? FromEntity(Restaurant? restaurant)
-    {
-        if (restaurant == null)
-        {
-            return null;
-        }
+    //public static RestaurantDto? FromEntity(Restaurant? restaurant)
+    //{
+    //    if (restaurant == null)
+    //    {
+    //        return null;
+    //    }
 
-        return new RestaurantDto
-        {
-            Id = restaurant.Id,
-            Name = restaurant.Name,
-            Description = restaurant.Description,
-            HasDelivery = restaurant.HasDelivery,
-            Category = restaurant.Category,
-            City = restaurant.Address?.City,
-            Street = restaurant.Address?.Street,
-            PostalCode = restaurant.Address?.PostalCode,
-            Dishes = restaurant.Dishes.Select(DishDto.FromEntity).ToList()
-        };
+    //    return new RestaurantDto
+    //    {
+    //        Id = restaurant.Id,
+    //        Name = restaurant.Name,
+    //        Description = restaurant.Description,
+    //        HasDelivery = restaurant.HasDelivery,
+    //        Category = restaurant.Category,
+    //        City = restaurant.Address?.City,
+    //        Street = restaurant.Address?.Street,
+    //        PostalCode = restaurant.Address?.PostalCode,
+    //        Dishes = restaurant.Dishes.Select(DishDto.FromEntity).ToList()
+    //    };
 
-    }
+    //}
 }
