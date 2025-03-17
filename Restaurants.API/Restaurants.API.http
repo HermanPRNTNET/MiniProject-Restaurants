@@ -1,5 +1,7 @@
 @host = http://localhost
 @port = 5128
+@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6RC9VTNmPa0s_hirFRiyk_H-I86tlfGCWq3vFYWqEx4PT2t-4K6VvNGNi_1W5L8fdc1XcE5wLvlq06JHSFZexN9HUmsPse94MiauN1oseJGPAviUxAgnGlg80frQrMFfgu_TjfPTQB21gekFK_eTAIPrZ79l8BJlDyYwTKbJcsM9VeWYqc8C28a0u1ugHtn2GP8a4LGlh87VbaUtJPp1wj9kb64kbf6vOJ7W4Pu4Uri_HMBGunKKBJJzPt24x-OMdYcv00NZAcpat47HL-_o3wys_3o2rxQ62SHy92lg5zEhxyeCRAHfuvj6m_dD4KPios-NNlzOiJ9fz88CkGf_cUzS9rh6MQr37RyozCMRXT8yee49fO-j39P2FCLmidvkCmvIcn7KHR14G2cjFpnExAb1A8c_jXGuZW32iATHWVP-jWLmDQDAqSBTUSMn5C1ay6vZNBYN4u4ookjazvoc3J0__ULH-X7xxClpH47yVDcp9DRVC7P1Dp2Kgts0beN0KI-aKKBhp4AFOlXpf7cp_yO7KbiP_AcI5qNbpy-ugNF81HeIhktlRgc5c18-Pk5U01jlypKbj56kE1YrH2wWP63lSY05FMh0Zy4uJwK1_Noxv2eH10rZ13wF4pzwjTbThO2-X2QQxoOR3Q1DZ5vEbyBmBZ7-yaMtkSId6LsSwwhaQ
+
 
 @Restaurants.API_HostAddress = https://localhost:7089
 
@@ -13,6 +15,8 @@ Random-Int: {{$randomInt}}
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants
+Authorization:Bearer {{token}}
+
 
 ###
 
@@ -51,3 +55,47 @@ Content-Type: application/json
 }
 
 ###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/2/dishes
+Content-Type: application/json
+
+{
+   "Name":"Super Panas 2",
+  "Description":"Ayam 1 Nasi 1 Dan 1 Minuman",
+  "Price":50000,
+  "KiloCalories":100
+}
+
+###
+
+@restaurantId=1
+GET {{Restaurants.API_HostAddress}}/api/restaurants/2/dishes
+
+###
+
+@dishId=3
+GET {{Restaurants.API_HostAddress}}/api/restaurants/{{restaurantId}}/dishes/{{dishId}}
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/2/dishes/
+
+###
+
+
+POST {{Restaurants.API_HostAddress}}/register
+Content-Type: application/json
+{
+  "email":"testuser@mail.com",
+  "password":"Password1!"
+}
+
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/identity/login
+Content-Type: application/json
+{
+  "email":"testuser@mail.com",
+  "password":"Password1!"
+}
