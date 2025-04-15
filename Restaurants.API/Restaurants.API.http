@@ -1,6 +1,6 @@
 @host = http://localhost
 @port = 5128
-@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6RC9VTNmPa0s_hirFRiyk_H-I86tlfGCWq3vFYWqEx4PT2t-4K6VvNGNi_1W5L8fdc1XcE5wLvlq06JHSFZexN9HUmsPse94MiauN1oseJGPAviUxAgnGlg80frQrMFfgu_TjfPTQB21gekFK_eTAIPrZ79l8BJlDyYwTKbJcsM9VeWYqc8C28a0u1ugHtn2GP8a4LGlh87VbaUtJPp1wj9kb64kbf6vOJ7W4Pu4Uri_HMBGunKKBJJzPt24x-OMdYcv00NZAcpat47HL-_o3wys_3o2rxQ62SHy92lg5zEhxyeCRAHfuvj6m_dD4KPios-NNlzOiJ9fz88CkGf_cUzS9rh6MQr37RyozCMRXT8yee49fO-j39P2FCLmidvkCmvIcn7KHR14G2cjFpnExAb1A8c_jXGuZW32iATHWVP-jWLmDQDAqSBTUSMn5C1ay6vZNBYN4u4ookjazvoc3J0__ULH-X7xxClpH47yVDcp9DRVC7P1Dp2Kgts0beN0KI-aKKBhp4AFOlXpf7cp_yO7KbiP_AcI5qNbpy-ugNF81HeIhktlRgc5c18-Pk5U01jlypKbj56kE1YrH2wWP63lSY05FMh0Zy4uJwK1_Noxv2eH10rZ13wF4pzwjTbThO2-X2QQxoOR3Q1DZ5vEbyBmBZ7-yaMtkSId6LsSwwhaQ
+@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6TGs3m3liGICwi7mWUtyJo5oiC8whWk8b_K8T_Dt1RsS5t95ALtjfgLT_mTisADdxLTvdu0o1KRb6eexefj4SY1IUeinv3PxY9lDmFmF_NEzmpJJShrV-MLOofUa9rzxoYX1EkRH3I_N6cqlc-Di40ca6fGGzoIHbJmgIRzHV7Jf48rsbb0jZBb_gG1Tg7_e0qSnOgZy9xq2-7cEeJnBVQ71J3Ix91L1-pLz0WwrnW-d3AZWIcji1q55WRolmB1Fbm1gASindl5BgW7pdO1p-Qa_rEA-2GDP62OncZRQ5B6PiJ9Q9DHzKZ-mPZ3PzpO_mPY3XZteh5ZAELXo4Um5DhxepTrAqGCLHSW0LkNovg1PqwnCY6SO9Ss5veKaN4rH5jF394hwjTPEMFuL4qavcglTrWBEgSaDIIWGPXgBnRYqelrkdPojXMqtmXOYmaJ5Fkol8IlIOanAu81H0AJ_8V5OnchaUUQjxTfXPVepU9IBIXaUbmoUL0aUbTmbykHsKGU6DXyXR_QdRCXiJVW2_O_UGoQqICt1LczM3zfc6N1_f0iQ3qwJsm95qA6QsbAOf3Gq_4sMy468nZR5GAyfGSdyFrjG7i7uDQgfNfD8EEIBhKr6Nf-z_otuxMZm9Rz8w5XrfnAU8tJYC8AAOyY_9hgP3-_ZulmMcU3EpNrF9ydyaTKuu7QklnWnu5KCdqNK7gH8yxJzZPm9Fc1Usds_r4xrcx1WQsPPxlO7nA0AgKCN-mLAMc8ozL0PqW0w3e4Rtrqqp4vu9CbPiyN-pPxdf3h
 
 
 @Restaurants.API_HostAddress = https://localhost:7089
@@ -25,6 +25,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/2
 ###
 
 POST {{Restaurants.API_HostAddress}}/api/restaurants
+Authorization : Bearer {{token}}
 Content-Type: application/json
 {
   "Name": "Ayam Geprek",
@@ -83,10 +84,10 @@ DELETE {{Restaurants.API_HostAddress}}/api/restaurants/2/dishes/
 ###
 
 
-POST {{Restaurants.API_HostAddress}}/register
+POST {{Restaurants.API_HostAddress}}/api/identity/register
 Content-Type: application/json
 {
-  "email":"testuser@mail.com",
+  "email":"User@mail.com",
   "password":"Password1!"
 }
 
@@ -96,6 +97,6 @@ Content-Type: application/json
 POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 {
-  "email":"testuser@mail.com",
+  "email":"Admin@mail.com",
   "password":"Password1!"
 }
