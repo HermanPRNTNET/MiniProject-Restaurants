@@ -34,7 +34,7 @@ public class RestaurantController(IMediator mediator) : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Roles = UserRoles.Owner)]
+    //[Authorize(Roles = UserRoles.Owner)]
     public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantCommand command)
     {
         int id = await mediator.Send(command);

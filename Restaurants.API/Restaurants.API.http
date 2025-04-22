@@ -1,8 +1,6 @@
 @host = http://localhost
 @port = 5128
-@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6TGs3m3liGICwi7mWUtyJo5oiC8whWk8b_K8T_Dt1RsS5t95ALtjfgLT_mTisADdxLTvdu0o1KRb6eexefj4SY1IUeinv3PxY9lDmFmF_NEzmpJJShrV-MLOofUa9rzxoYX1EkRH3I_N6cqlc-Di40ca6fGGzoIHbJmgIRzHV7Jf48rsbb0jZBb_gG1Tg7_e0qSnOgZy9xq2-7cEeJnBVQ71J3Ix91L1-pLz0WwrnW-d3AZWIcji1q55WRolmB1Fbm1gASindl5BgW7pdO1p-Qa_rEA-2GDP62OncZRQ5B6PiJ9Q9DHzKZ-mPZ3PzpO_mPY3XZteh5ZAELXo4Um5DhxepTrAqGCLHSW0LkNovg1PqwnCY6SO9Ss5veKaN4rH5jF394hwjTPEMFuL4qavcglTrWBEgSaDIIWGPXgBnRYqelrkdPojXMqtmXOYmaJ5Fkol8IlIOanAu81H0AJ_8V5OnchaUUQjxTfXPVepU9IBIXaUbmoUL0aUbTmbykHsKGU6DXyXR_QdRCXiJVW2_O_UGoQqICt1LczM3zfc6N1_f0iQ3qwJsm95qA6QsbAOf3Gq_4sMy468nZR5GAyfGSdyFrjG7i7uDQgfNfD8EEIBhKr6Nf-z_otuxMZm9Rz8w5XrfnAU8tJYC8AAOyY_9hgP3-_ZulmMcU3EpNrF9ydyaTKuu7QklnWnu5KCdqNK7gH8yxJzZPm9Fc1Usds_r4xrcx1WQsPPxlO7nA0AgKCN-mLAMc8ozL0PqW0w3e4Rtrqqp4vu9CbPiyN-pPxdf3h
-
-
+@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6SYVKhTr4fTjII3FEFJOBeEWIlpvwfJKSSTaYrtNd-VOAaPVQ98VGLYbzW2gi0HxjOoQcoP48QNI91uoTOioBWOMTqFUuv20T0b06aUp7xkYYX1tDL8nx2Xp5oqLbEPHYywZZbRxhA9Rcd4ajAeaBodw26cuF329SN463BwQq14vReydKTl0_JmqDSMMivGlMjka1EIHP-bWqk9P6LKGFIw3Xyj68o8b0bzSRdj2qCSp2l2uHHJoDy_jjJQaOzCO-_PX1bMwYLPgNy9PtDeBUoA_GXKRsL8ik-lJLbaghHEuaBzjKSCzvlUoDXks2xnrir2wdHurmw0xT7v8YqO9WEZNBrLKzTj_4m0YzBbGWTJrWZseHiyJMAb1rWDH4c7yDJ5tRcy6fTCn4w1ZXqgeMivM7NdQyxFmv0xf55GQu4wMhE2KGupwZKVxnEtA6lFESEnB-9uBI2I8N4N798t6m69fP6vx2XvriMurYiNaE79F0cPU60Al23I8rRZpN8HVGrcuCKEG_dDE3LJ2_MVW2SEKPEU1G9npeAZsRkwhxFPr83Qom3Xjdh7QhwBMVgBGu1NOMkDR2JamdfZWnh0FA_H4jMD-X8MvHSuI66yEIcxQV_u8sRhrOA6lb9MI1yYQcjzub_qefrn63lc6kUWytobHYx6akVgNQXM7LzutzBZbhyUJViiMQ6vXe0EheL2i_cnmpIVlKxaVLqqIdkLTczAy6pmocLo8WSe2MwUkz8KcFiHzz7CQ7WcHblVSoxw6oKGSTn_LmpjzXN6pz2KgsBe
 @Restaurants.API_HostAddress = https://localhost:7089
 
 GET {{Restaurants.API_HostAddress}}/api/weatherforecast/example
@@ -28,7 +26,7 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Authorization : Bearer {{token}}
 Content-Type: application/json
 {
-  "Name": "Ayam Geprek",
+  "Name": "Ayam Geprek With New User@mail.com",
   "Description": "Traditional Store",
   "Category": "Fast Food",
   "HasDelivery": true,
@@ -97,6 +95,6 @@ Content-Type: application/json
 POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 {
-  "email":"Admin@mail.com",
+  "email":"User@mail.com",
   "password":"Password1!"
 }
