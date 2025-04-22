@@ -1,6 +1,8 @@
 @host = http://localhost
 @port = 5128
-@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6SYVKhTr4fTjII3FEFJOBeEWIlpvwfJKSSTaYrtNd-VOAaPVQ98VGLYbzW2gi0HxjOoQcoP48QNI91uoTOioBWOMTqFUuv20T0b06aUp7xkYYX1tDL8nx2Xp5oqLbEPHYywZZbRxhA9Rcd4ajAeaBodw26cuF329SN463BwQq14vReydKTl0_JmqDSMMivGlMjka1EIHP-bWqk9P6LKGFIw3Xyj68o8b0bzSRdj2qCSp2l2uHHJoDy_jjJQaOzCO-_PX1bMwYLPgNy9PtDeBUoA_GXKRsL8ik-lJLbaghHEuaBzjKSCzvlUoDXks2xnrir2wdHurmw0xT7v8YqO9WEZNBrLKzTj_4m0YzBbGWTJrWZseHiyJMAb1rWDH4c7yDJ5tRcy6fTCn4w1ZXqgeMivM7NdQyxFmv0xf55GQu4wMhE2KGupwZKVxnEtA6lFESEnB-9uBI2I8N4N798t6m69fP6vx2XvriMurYiNaE79F0cPU60Al23I8rRZpN8HVGrcuCKEG_dDE3LJ2_MVW2SEKPEU1G9npeAZsRkwhxFPr83Qom3Xjdh7QhwBMVgBGu1NOMkDR2JamdfZWnh0FA_H4jMD-X8MvHSuI66yEIcxQV_u8sRhrOA6lb9MI1yYQcjzub_qefrn63lc6kUWytobHYx6akVgNQXM7LzutzBZbhyUJViiMQ6vXe0EheL2i_cnmpIVlKxaVLqqIdkLTczAy6pmocLo8WSe2MwUkz8KcFiHzz7CQ7WcHblVSoxw6oKGSTn_LmpjzXN6pz2KgsBe
+@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6RmcCYwJqzq-_Jmd5CaAuUGwO4T6A1IaX_levVd_1bzk2b5DqSpfEWmMRHtvEt2w-ZzBLFw48GdMbSXnmwdV6uModglj84Pm2TmxKUhlFsff0h00xnuS8lzRsjapTI5GIE6njPIafqyVE2lENJ4B-191HiwJyIGD84GzAHCixj7ov2l7_flNVceoenQPUdFcVW3Ayb--ZqiDcld2RZEUz6b93rS5dviAYP681Cn0R20qw1wkDgSsw2PH64jLUFILvihTx0z1-N_W1NpKvM930jY1GaQDt-wbQDhIjYU0aoWfKWdQEblJ9cVMPbdM9ZUGiHNPwhbmvykm2RvAWTwKDYh7z6ju6iIuBAO3zYKSmbSs0BgMUpm9RDgDuB1f6m6ryBy9rWd_HY6SVHJWSn3y3J00gogMQXm_P1dtqK7YJeGAX3LEammS8gzyBRciVKL0m8d2qwb9kNZ1GyoIRhNRDrvPYqP8FINKyCnNm0HmvumknudLp4-fpvuSVe5OQxdzj988OAAnHW2_iboPsWPVw0pOUIm3yznrxLcwiOFC1QmTFXMQYpFc6m2_U6Gvyz-aivt3cRSrhFBgelifLSWUM-9LSOevJ6_U6RkJbLLA_9KZg4NnKdN3cY3HMxb_etnMO7IunZVk3eGWaKAp13BcDP6XPlrzrZW080sVnom4Z2VgyvHD8KGy_9mjqCqOjfS7z2oyEcoWeTBFJQEaEm_MXoMWl9mtW0koFairbA98jZ2Y4uqfmzI0jvqQ9KMLB4D6CEpSLZpof_lHQU70sRjMuvF
+
+
 @Restaurants.API_HostAddress = https://localhost:7089
 
 GET {{Restaurants.API_HostAddress}}/api/weatherforecast/example
@@ -40,15 +42,16 @@ Content-Type: application/json
 ###
 
 @id=0
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/1
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/2
 
 ###
 
-PATCH {{Restaurants.API_HostAddress}}/api/restaurants/6
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/2
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-  "Name":"Warung Sambal New Gen Update 1",
+  "Name":"Update Warung No 222",
   "Description":"Some Description",
   "HasDeliver": true
 }
@@ -95,6 +98,6 @@ Content-Type: application/json
 POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 {
-  "email":"User@mail.com",
+  "email":"Owner@mail.com",
   "password":"Password1!"
 }

@@ -15,11 +15,23 @@ namespace Restaurants.API.Middlewares
             }
             catch (NotFoundException notFound)
             {
-                logger.LogError(notFound.Message);
+                //logger.LogError(notFound.Message);
                 context.Response.StatusCode = 404;
                 await context.Response.WriteAsync(notFound.Message);
 
             }
+            catch (ForbidenException forbiden)
+            {
+                //logger.LogError(forbiden.Message);
+                context.Response.StatusCode = 403;
+                await context.Response.WriteAsync("Access Denied");
+            }
+            //catch (BadRequestException badRequest)
+            //{
+            //    logger.LogError(badRequest.Message);
+            //    context.Response.StatusCode = 400;
+            //    await context.Response.WriteAsync(badRequest.Message);
+            //}
             catch (Exception ex)
             {
                 logger.LogError(ex, ex.Message);
