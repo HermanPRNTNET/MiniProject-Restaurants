@@ -27,17 +27,18 @@ namespace Restaurants.Application.Restaurants.Commands.UpdateRestaurant
             {
                 logger.LogWarning($"Restaurant with id {request.Id} not found");
                 throw new NotFoundException(nameof(Restaurant), request.Id.ToString());
-
+                //return false;
                 //return false;
             }
 
-            if (!restaurantAuthorizationService.Authorize(restaurant, ResourceOperation.Update))
+            else if (!restaurantAuthorizationService.Authorize(restaurant, ResourceOperation.Update))
             {
                 throw new ForbidenException();
             }
 
             mapper.Map(request, restaurant);
             await restaurantsRepository.SaveChanges();
+
             
         }
     }
