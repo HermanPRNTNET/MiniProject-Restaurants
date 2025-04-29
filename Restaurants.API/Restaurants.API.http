@@ -1,6 +1,8 @@
 @host = http://localhost
 @port = 5128
-@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6R1s9hmMcb-USoCfqTNh7m7DJYjfqWqUpA8RpmubIWqz12PDzX29M_taV2paN6Uad8lNGo0xgj5hFIrCh7tUA-LqzmuDwIV6qjxPymp_0gyBKOQp_xkQL4x5eYz9EtkX0uIjUiytPnkF7JCd0lRCTat9nX-b2elmyqgd2tBQbG-DHws0uloEUNMknjTpri-2ErxJnQbjPReDSo3wGRhmwad7WFGIdZAxolYjoJd6PlbugDKB831xxioybqvbCcVb-TAMXTzBpksVUEj5c-mvChN1IIzINe_omHbMCjj3eU2K2Gs7eCEesEh2BVW46tcN2Aqz17T1VcwaWkoORdXAZ4hnbSKJu66w90yXrxRAU0j0W9LikQjNlMqA7JOknZcaBPnnS89UxOCFul5xEd13qqaZQ0cXGJu8L0saykUBxt8LKQearK-Cjn-JIDCon5ix45VVgU4NWVP-UZJuQGBogYruM3QPE4paKb7MPMw_TGHsJ8oQCGwQ7MvqqfqYnQ3cZPS6I_cmnAkj87zxCXNpJnPpTl4OSwzxTEPojURfN_IgEJ7g4N_RuE1Lh4nlJPniasiZbBUu0lxQwvAa_BeVBoEDmkQPtGdQTfzkY6JKqpOvq2pgatw3HejVB-CImBBWn4RfFZQbo2Q-GhYJaDfbgEsenjl-HqToeT9xtkUIYWNWg-hLfRzsjdsVp40dBRQKSDeIaSYxQENglRYNEr-LtCzJ9ysmLJDORy5kkTywTi1dx-vDuQ1rDGSgXGcY1DVaalmgW3Yb-61etrQSglRZwrd
+@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6SgVzg2OEHnD4jap8QSkA_M4NEq6mVWzh3LdW-MKyIMZG3AhnpsMmq4neijhcoGNAkAGfQH4Kyb5niG8rLQXvun9XCpzHeaREQ8115s1X5jPFLT1RH-H1obx7cniTFlWA1DRJb2Vy2yB1553ovl_e9ebY3PbF10HDBGbpvpVtIlrknDcFbEFJeb6XRBRKB9bXG4xmM7vDFdgwQpQr4bakwnQk_zhAYUl7l2EAvaOkFS1GNeyzPd5eOKFT0n_HwmktY9v1RgBjSbMyCkkIn7lPsQhvmWCzpI2rVkzeA7cjnewmhTeYyLmZzm4VrrNQYywpgIrN9AiJCCjx4DDUD22LKDCNEd5_1Ip6koIOj3OY49YB_ntpeSXZY4FWbIH5-K2YIOpVk-rekdZfqRnUCzQcJ7JAHWHljcHGBe7apoXgWaJHEdcobwV6YyWPIxANNVRrrhfpn78BGYmj8MILeZeXz5CVWJGeUdsTVr40KFVEaSuGmJsjqMc4lU3-BZVx3yk2LynFplMw_pznko-7eSUlCH03qUSHrF_-DhaanHSb3WoA7UodMMJ8l6YjBkKGdb1pTTVntnljn0W-IDZB0IS3APV7cl04ZES3B9E-AbJk2gPzxC3L1kvmPvVuXT2V9IJA7mKOccv4zoRoeSLHe-YoIU6NaBrFaJx1iyfy4xx57mU8vOjA5q9SeTe060U1rSQsTkA2Zz0RzQqMQlZjj9IZBzL-ChXRuVvBUCwy1gWsfkL__oy_vgyY3jRClOsuk2rt0cRvd_FeXcQA5G236dDZ-x
+
+
 @Restaurants.API_HostAddress = https://localhost:7089
 
 GET {{Restaurants.API_HostAddress}}/api/weatherforecast/example
@@ -18,7 +20,7 @@ Authorization:Bearer {{token}}
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/2
+GET {{Restaurants.API_HostAddress}}/api/restaurants/14
 
 ###
 
@@ -39,7 +41,9 @@ Content-Type: application/json
 
 ###
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/11
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/14
+Content-Type: application/json
+Authorization: Bearer {{token}}
 
 ###
 

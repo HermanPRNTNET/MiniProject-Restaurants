@@ -45,7 +45,7 @@ public class RestaurantController(IMediator mediator) : ControllerBase
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [Authorize(Roles = UserRoles.Owner)]
+    //[Authorize(Roles = UserRoles.Owner)]
     public async Task<IActionResult> DeleteRestaurant([FromRoute] int id)
     {
         await mediator.Send(new DeleteRestaurantCommand(id));
