@@ -1,20 +1,22 @@
 @host = http://localhost
 @port = 5128
-@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6SgVzg2OEHnD4jap8QSkA_M4NEq6mVWzh3LdW-MKyIMZG3AhnpsMmq4neijhcoGNAkAGfQH4Kyb5niG8rLQXvun9XCpzHeaREQ8115s1X5jPFLT1RH-H1obx7cniTFlWA1DRJb2Vy2yB1553ovl_e9ebY3PbF10HDBGbpvpVtIlrknDcFbEFJeb6XRBRKB9bXG4xmM7vDFdgwQpQr4bakwnQk_zhAYUl7l2EAvaOkFS1GNeyzPd5eOKFT0n_HwmktY9v1RgBjSbMyCkkIn7lPsQhvmWCzpI2rVkzeA7cjnewmhTeYyLmZzm4VrrNQYywpgIrN9AiJCCjx4DDUD22LKDCNEd5_1Ip6koIOj3OY49YB_ntpeSXZY4FWbIH5-K2YIOpVk-rekdZfqRnUCzQcJ7JAHWHljcHGBe7apoXgWaJHEdcobwV6YyWPIxANNVRrrhfpn78BGYmj8MILeZeXz5CVWJGeUdsTVr40KFVEaSuGmJsjqMc4lU3-BZVx3yk2LynFplMw_pznko-7eSUlCH03qUSHrF_-DhaanHSb3WoA7UodMMJ8l6YjBkKGdb1pTTVntnljn0W-IDZB0IS3APV7cl04ZES3B9E-AbJk2gPzxC3L1kvmPvVuXT2V9IJA7mKOccv4zoRoeSLHe-YoIU6NaBrFaJx1iyfy4xx57mU8vOjA5q9SeTe060U1rSQsTkA2Zz0RzQqMQlZjj9IZBzL-ChXRuVvBUCwy1gWsfkL__oy_vgyY3jRClOsuk2rt0cRvd_FeXcQA5G236dDZ-x
+@token = CfDJ8Pa8Aswr_RVOorw7a7SOD6QzeWTvFU9eL0Ucxvblc5U9BUZw5laZXRd6R2oXkQAUpRUotIjGqEymQPOzeq_kCZCfZ5Meov68LoYMIgmY-TqC28REpehAFse0AJGAZMzmRlXtBQnICIClcfX_XEyIDt93geVpamUkITIbdC7NcPun7SEuOviK1JKK_coTtXMJ6JplMJAFmEHtb2IAMRrEOO2zBBaaqodqS5HKb2dFEKgJnjH-5Tp3rueThtqBlxqVCyaVPMLf-CFyN2QetIv2HM4G-CDUYzxWUWDg-seIeAoVIOJg-yzUDakAJB24ooI3cF8zri3E4XwLMry83GPJrZDtRbh_Q7GSXqzpT-fvB9BqbS7xRWXaJy5AYu8Y_IjOc8ycLJLf7rxgVRMl2xazoTNBhz2QXytCxGp6yyyDPbUDbCvqJJUJYGF9Y8MRV08ashVIdaybz-O4FjFiVktyZbydHEjvt7T8FNtCb4eY0iMN2h4tV1EMDlAFz4W1p8g24jY2ExF60yzFz8wzKV7SHq_Y1Bj5sroiVd9wo_vv97ap61In6I_V0BHo4MfvcZOWGRsNvq4JqUAiGy9ziaUAoI0Ld12vyBlJiYqW9m7p2KksaQgSicgT_pdzGat0t1IsC8LYb_Azaua-qlN7JV3Q04JRivCe1yoozdM1V8M5HVD8IPc3-1yeil4D_ebJ-T3N5iEryGRbiv6IN1UV8KJZ7AsAK_pZ3lXS4yURqUJvk_2jTSp_1DWteMa3JvqlcikCCQKiZuPL51nQqKGigqHT37oPDbikMzvjWDUSebjRwGI9
 
 
 @Restaurants.API_HostAddress = https://localhost:7089
 
-GET {{Restaurants.API_HostAddress}}/api/weatherforecast/example
-Accept: application/json
-ProjectUrl: {{$projectUrl}}
-Guid: {{$guid}}
-LocalDate: {{$datetime iso8601}}
-Random-Int: {{$randomInt}}
+###
+
+POST {{Restaurants.API_HostAddress}}/api/identity/login
+Content-Type: application/json
+{
+  "email":"owner@mail.com",
+  "password":"Password1!"
+}
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants
+GET {{Restaurants.API_HostAddress}}/api/restaurants?SearchParam=ayam
 Authorization:Bearer {{token}}
 
 
@@ -94,14 +96,6 @@ Content-Type: application/json
 }
 
 
-###
-
-POST {{Restaurants.API_HostAddress}}/api/identity/login
-Content-Type: application/json
-{
-  "email":"owner2@mail.com",
-  "password":"Password1!"
-}
 
 ###
 

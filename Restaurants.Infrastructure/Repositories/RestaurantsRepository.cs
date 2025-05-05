@@ -32,6 +32,21 @@ namespace Restaurants.Infrastructure.Repositories
             return restaurants;
         }
 
+        public async Task<IEnumerable<Restaurant>> GetAllSearchAsync(string? searchParam)
+        {
+            var searchPhraseLower = searchParam?.ToLower()?? string.Empty;
+
+            //var restaurants = await dbContext.Restaurants
+            //    .Where(r=> searchPhraseLower == null || (r.Name.ToLower().Contains(searchPhraseLower) ||
+            //                r.Description.ToLower().Contains(searchPhraseLower))).ToListAsync();
+
+            var restaurants = await dbContext.Restaurants
+                .Where(r => r.Name.ToLower().Contains(searchPhraseLower) ||
+                            r.Description.ToLower().Contains(searchPhraseLower)).ToListAsync();
+            //.Include(r => r.Dishes).ToListAsync();
+            return restaurants;
+        }
+
         public async Task<Restaurant?> GetByIdAsync(int id)
         {
             var restaurantById = await dbContext.Restaurants
