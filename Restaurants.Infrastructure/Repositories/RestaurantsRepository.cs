@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Restaurants.Domain.Constants;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repositories;
 using Restaurants.Infrastructure.Presistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,7 +34,7 @@ namespace Restaurants.Infrastructure.Repositories
             return restaurants;
         }
 
-        public async Task<(IEnumerable<Restaurant>,int)> GetAllSearchAsync(string? searchParam,int pageSize,int pageNumber)
+        public async Task<(IEnumerable<Restaurant>,int)> GetAllSearchAsync(string? searchParam, int pageSize, int pageNumber, string? sortBy, SortDirection sortDirection)
         {
             var searchPhraseLower = searchParam?.ToLower()?? string.Empty;
 
@@ -41,6 +43,22 @@ namespace Restaurants.Infrastructure.Repositories
                             r.Description.ToLower().Contains(searchPhraseLower));
 
             var totalCount = await baseQuery.CountAsync();
+            if (sortBy != null)
+            {
+                var columnSelector = new Dictionary<string, Expression<Func<Restaurant, object>>>
+                {
+                    { nameof(Restaurant.Name), r => r.Name },
+                    { nameof(Restaurant.Description), r => r.Description },
+                    { nameof(Restaurant.Category), r => r.Category }
+                };
+
+                var selectedCollumn = columnSelector[sortBy];
+
+                baseQuery = sortDirection == SortDirection.Ascending 
+                        ? baseQuery.OrderBy(selectedCollumn)
+                        : baseQuery.OrderByDescending(selectedCollumn);
+            }
+
 
             //var restaurants = await dbContext.Restaurants
             //    .Where(r=> searchPhraseLower == null || (r.Name.ToLower().Contains(searchPhraseLower) ||

@@ -23,7 +23,9 @@ namespace Restaurants.Application.Restaurants.Queries.GetAllRestaurants
             //var restaurants1 = await restaurantRepository.GetAllAsync();
             var (restaurants,totalCount) = await restaurantRepository.GetAllSearchAsync(request.SearchParam,
                 request.PageSize,
-                request.PageNumber);
+                request.PageNumber,
+                request.SortBy,
+                request.SortDirection);
 
             //var restaurantsDto = restaurants.Select(RestaurantDto.FromEntity);
             var restaurantsDto = mapper.Map<IEnumerable<RestaurantDto>>(restaurants);
