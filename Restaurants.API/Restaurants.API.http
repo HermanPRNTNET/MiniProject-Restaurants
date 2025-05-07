@@ -16,7 +16,7 @@ Content-Type: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants?SearchParam=ayam
+GET {{Restaurants.API_HostAddress}}/api/restaurants?SearchParam=ayam&pageSize=2&pageNumber=1
 Authorization:Bearer {{token}}
 
 
