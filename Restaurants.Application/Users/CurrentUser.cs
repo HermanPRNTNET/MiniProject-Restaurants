@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Restaurants.Application.Users
 {
-    public record CurrentUser(string Id,string Email,IEnumerable<string> Role,string? Nationality,DateOnly? DateOfBirth)
+    public record CurrentUser(string Id,string Email,IEnumerable<string> Roles,string? Nationality,DateOnly? DateOfBirth)
     {
-        public bool IsInRole(string role) => Role.Contains(role);
+        public bool IsInRole(string role) => Roles.Contains(role);
     }
 }
     
