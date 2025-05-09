@@ -11,3 +11,4 @@ namespace Restaurants.Application.Users
         public bool IsInRole(string role) => Role.Contains(role);
     }
 }
+    
