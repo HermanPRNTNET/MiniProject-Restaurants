@@ -27,7 +27,7 @@ public class ErrorHandlingMiddlewareTests
     public async Task InvokeAsync_WhenNotFoundExceptionThrown_ShouldSetStatusCode404()
     {
         var loggerMock = new Mock<ILogger<ErrorHandlingMiddleware>>();
-        var middleWare = new ErrorHandlingMiddleware(loggerMock.Object);
+        var middleWare = new ErrorHandlingMiddleware(loggerMock.Object);            
         var context = new DefaultHttpContext();
         var notFoundException = new NotFoundException(nameof(Restaurants),"1");
 
