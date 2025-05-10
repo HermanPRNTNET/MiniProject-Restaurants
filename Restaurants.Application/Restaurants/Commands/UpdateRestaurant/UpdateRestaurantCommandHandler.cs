@@ -21,7 +21,7 @@ namespace Restaurants.Application.Restaurants.Commands.UpdateRestaurant
     {
         public async Task Handle(UpdateRestaurantCommand request, CancellationToken cancellationToken)
         {
-            logger.LogInformation("Deleting restaurant with id : {RestaurantId} with {@UpdatedRestaurant}", request.Id,request);
+            logger.LogInformation("Update restaurant with id : {RestaurantId} with {@UpdatedRestaurant}", request.Id,request);
             var restaurant = await restaurantsRepository.GetByIdAsync(request.Id);
             if (restaurant == null)
             {
@@ -41,5 +41,7 @@ namespace Restaurants.Application.Restaurants.Commands.UpdateRestaurant
 
             
         }
+
+
     }
 }
